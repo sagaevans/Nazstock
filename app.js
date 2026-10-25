@@ -60,23 +60,46 @@ function changeOf(m, t) {
 }
 
 /* ---------- jam bursa ---------- */
-function partsIn(tz) {
-  const f = new Intl.DateTimeFormat('en-US', { timeZone: tz, weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false });
-  const o = {}; f.formatToParts(new Date()).forEach(p => o[p.type] = p.value);
-  return { wd: o.weekday, min: (+o.hour % 24) * 60 + (+o.minute) };
+// Libur BEI: Peng-00171/BEI.POP/09-2025 (2026) & KPEI PENG-138/DIR/KPEI/0926 (2027)
+const HOLI = {
+  IDX: ['2026-01-01','2026-01-16','2026-02-16','2026-02-17','2026-03-18','2026-03-19','2026-03-20','2026-03-23','2026-03-24','2026-04-03','2026-05-01','2026-05-14','2026-05-15','2026-05-27','2026-05-28','2026-06-01','2026-06-16','2026-08-17','2026-08-25','2026-12-24','2026-12-25','2026-12-31',
+        '2027-01-01','2027-01-05','2027-02-05','2027-03-08','2027-03-09','2027-03-10','2027-03-11','2027-03-12','2027-03-15','2027-03-25','2027-03-26','2027-05-06','2027-05-17','2027-05-18','2027-05-19','2027-05-20','2027-06-01','2027-08-17','2027-12-24','2027-12-31'],
+  // NYSE/Nasdaq (nyse.com/markets/hours-calendars)
+  US: ['2026-01-01','2026-01-19','2026-02-16','2026-04-03','2026-05-25','2026-06-19','2026-07-03','2026-09-07','2026-11-26','2026-12-25',
+       '2027-01-01','2027-01-18','2027-02-15','2027-03-26','2027-05-31','2027-06-18','2027-07-05','2027-09-06','2027-11-25','2027-12-24']
+};
+const EARLY_US = ['2026-11-27','2026-12-24','2027-11-26']; // tutup 13:00 ET
+const TZ = { IDX: 'Asia/Jakarta', US: 'America/New_York' };
+function partsIn(tz, d) {
+  const f = new Intl.DateTimeFormat('en-CA', { timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false });
+  const o = {}; f.formatToParts(d || new Date()).forEach(p => o[p.type] = p.value);
+  return { wd: o.weekday, min: (+o.hour % 24) * 60 + (+o.minute), date: `${o.year}-${o.month}-${o.day}` };
 }
-function marketOpen(m) {
-  if (m === 'IDX') {
-    const { wd, min } = partsIn('Asia/Jakarta');
-    if (wd === 'Sat' || wd === 'Sun') return false;
-    const s1e = wd === 'Fri' ? 11 * 60 + 30 : 12 * 60, s2s = wd === 'Fri' ? 14 * 60 : 13 * 60 + 30;
-    return (min >= 9 * 60 && min < s1e) || (min >= s2s && min < 15 * 60 + 50);
-  }
-  const { wd, min } = partsIn('America/New_York');
-  if (wd === 'Sat' || wd === 'Sun') return false;
-  return min >= 9 * 60 + 30 && min < 16 * 60;
+function sessions(m, wd, date) {
+  if (wd === 'Sat' || wd === 'Sun' || HOLI[m].includes(date)) return [];
+  if (m === 'IDX') return wd === 'Fri' ? [[540, 690], [840, 950]] : [[540, 720], [810, 950]];
+  return [[570, EARLY_US.includes(date) ? 780 : 960]];
 }
-const hoursText = m => m === 'IDX' ? 'Sen–Kam 09:00–12:00 & 13:30–15:50, Jum 09:00–11:30 & 14:00–15:50 WIB' : '09:30–16:00 waktu New York (malam–dini hari WIB)';
+function marketState(m, d) {
+  const { wd, min, date } = partsIn(TZ[m], d);
+  const ss = sessions(m, wd, date);
+  if (!ss.length) return { open: false, why: HOLI[m].includes(date) ? 'hari libur bursa' : 'akhir pekan' };
+  if (ss.some(([a, b]) => min >= a && min < b)) return { open: true };
+  if (m === 'IDX' && min >= ss[0][1] && min < ss[1][0]) return { open: false, why: 'istirahat siang' };
+  return { open: false, why: min < ss[0][0] ? 'belum buka' : 'sudah tutup' };
+}
+const marketOpen = (m, d) => marketState(m, d).open;
+function nextOpen(m) {
+  const now = Date.now();
+  for (let k = 1; k <= 60 * 24 * 10; k += 1) { const d = new Date(now + k * 60000); if (marketOpen(m, d)) return d; }
+  return null;
+}
+function nextOpenText(m) {
+  const d = nextOpen(m); if (!d) return '';
+  return 'Buka lagi ' + d.toLocaleString('id-ID', { timeZone: 'Asia/Jakarta', weekday: 'long', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) + ' WIB';
+}
+const hoursText = m => m === 'IDX' ? 'Sen–Kam 09:00–12:00 & 13:30–15:50, Jum 09:00–11:30 & 14:00–15:50 WIB, libur sesuai kalender BEI' : '09:30–16:00 waktu New York (20:30–03:00 WIB saat DST AS, 21:30–04:00 WIB di luar DST), libur NYSE';
+function stateText(m) { const st = marketState(m); return st.open ? 'BUKA' : `TUTUP (${st.why}). ${nextOpenText(m)}`; }
 
 /* ---------- refresh harga ---------- */
 function findNum(o, keys) {
@@ -137,7 +160,7 @@ async function refresh(m) {
       const n = m === 'IDX' ? await refreshIDX(watchSymbols(m)) : await refreshUS(watchSymbols(m));
       msg += ` Harga terbaru ${n} saham diperbarui ${new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })}.`;
     } catch (e) { msg += ' ' + e.message; }
-    checkStops(m);
+    if (marketOpen(m)) checkStops(m);
     status(msg);
   } catch (e) { status('Gagal memuat data: ' + e.message); }
   btns.forEach(b => b.disabled = false);
@@ -223,7 +246,7 @@ function renderMarket() {
   let rows;
   if (q) { rows = d.s.filter(r => r[0].includes(q) || r[1].toUpperCase().includes(q)).slice(0, 80); $('#list-title').textContent = `Hasil pencarian (${rows.length})`; }
   else { rows = d.s.filter(r => r[2]); $('#list-title').textContent = m === 'IDX' ? 'Saham BUMN' : 'Saham besar AS'; }
-  $('#mkt-info').textContent = `Data harian per ${d.asof} (diperbarui ${d.updated}). ${d.s.length} saham tersedia. Bursa ${marketOpen(m) ? 'BUKA' : 'TUTUP'}: ${hoursText(m)}.`;
+  $('#mkt-info').textContent = `Data harian per ${d.asof} (diperbarui ${d.updated}). ${d.s.length} saham tersedia. Bursa ${stateText(m)}. Jam: ${hoursText(m)}.`;
   const t = $('#list'); t.innerHTML = '<tr><th>Saham</th><th>Harga</th><th>Ubah</th></tr>';
   rows.forEach(r => {
     const p = priceOf(m, r[0]); if (!p) return; const ch = changeOf(m, r[0]);
@@ -339,7 +362,8 @@ function estimate() {
 
 /* ---------- transaksi ---------- */
 function canTrade(m, t) {
-  if (cfg.hours && !marketOpen(m)) return 'Bursa sedang tutup. Jam bursa: ' + hoursText(m) + '.';
+  const st = marketState(m);
+  if (!st.open) return `Bursa tutup (${st.why}). ${nextOpenText(m)}.`;
   const p = priceOf(m, t);
   if (cfg.strict && (!p.live || Date.now() - p.ts > 15 * 60 * 1000)) return 'Tekan Refresh harga dulu (harga harus ≤ 15 menit).';
   return null;
@@ -382,7 +406,7 @@ function checkStops(m) {
 }
 
 /* ---------- pengaturan & ekspor ---------- */
-function fillCfg() { $('#k-goapi').value = cfg.goapi; $('#k-rapid').value = cfg.rapid; $('#k-rhost').value = cfg.rhost; $('#k-rpath').value = cfg.rpath; $('#k-strict').checked = cfg.strict; $('#k-hours').checked = cfg.hours; }
+function fillCfg() { $('#k-goapi').value = cfg.goapi; $('#k-rapid').value = cfg.rapid; $('#k-rhost').value = cfg.rhost; $('#k-rpath').value = cfg.rpath; $('#k-strict').checked = cfg.strict; }
 function bind() {
   document.querySelectorAll('#tabs button').forEach(b => b.onclick = () => {
     document.querySelectorAll('#tabs button').forEach(x => x.classList.toggle('on', x === b)); ui.tab = b.dataset.tab;
@@ -402,7 +426,7 @@ function bind() {
   $('#d-close').onclick = closeStock; $('#sheet').onclick = e => { if (e.target.id === 'sheet') closeStock(); };
   document.querySelectorAll('#d-side button').forEach(b => b.onclick = () => { ui.side = b.dataset.s; $('#d-msg').textContent = ''; renderDetail(); });
   $('#d-qty').oninput = estimate; $('#d-go').onclick = onTrade;
-  $('#btn-save').onclick = () => { cfg = { goapi: $('#k-goapi').value.trim(), rapid: $('#k-rapid').value.trim(), rhost: $('#k-rhost').value.trim(), rpath: $('#k-rpath').value.trim(), strict: $('#k-strict').checked, hours: $('#k-hours').checked, idxMin: cfg.idxMin, idxMax: cfg.idxMax }; saveCfg(); status('Pengaturan disimpan di browser ini.'); };
+  $('#btn-save').onclick = () => { cfg = { goapi: $('#k-goapi').value.trim(), rapid: $('#k-rapid').value.trim(), rhost: $('#k-rhost').value.trim(), rpath: $('#k-rpath').value.trim(), strict: $('#k-strict').checked, idxMin: cfg.idxMin, idxMax: cfg.idxMax }; saveCfg(); status('Pengaturan disimpan di browser ini.'); };
   $('#btn-export').onclick = () => { const a = el('a', { href: URL.createObjectURL(new Blob([JSON.stringify({ app: 'nazstock', v: 1, state }, null, 1)], { type: 'application/json' })), download: `nazstock-${new Date().toISOString().slice(0, 10)}.json` }); document.body.appendChild(a); a.click(); a.remove(); };
   $('#f-import').onchange = async e => { const f = e.target.files[0]; if (!f) return; try { const j = JSON.parse(await f.text()); if (!j.state || !j.state.IDR || !j.state.USD) throw 0; state = j.state; save(); status('Data simulasi berhasil diimpor.'); renderAll(); } catch { status('File impor tidak valid.'); } e.target.value = ''; };
   $('#btn-reset').onclick = () => { if (confirm('Reset saldo ke Rp10.000.000 dan $1.000, hapus semua posisi dan riwayat?')) { state = freshState(); save(); renderAll(); status('Simulasi direset.'); } };

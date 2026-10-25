@@ -26,10 +26,10 @@ Saldo tidak saling dikonversi. Saham IDX dibeli dengan saldo Rupiah, saham AS de
 - Beli dan jual di harga terbaru (hasil Refresh) atau harga penutupan terakhir.
 - **IDX**: transaksi per lot (1 lot = 100 lembar), biaya beli 0,15% dan jual 0,25%.
 - **AS**: transaksi per lembar, tanpa biaya.
-- **Jam bursa**: transaksi hanya bisa saat bursa buka (bisa dimatikan di Pengaturan).
+- **Jam bursa (wajib)**: beli/jual dan stop loss/take profit hanya jalan saat bursa buka. IDX: Sen–Kam 09:00–12:00 & 13:30–15:50, Jum 09:00–11:30 & 14:00–15:50 WIB. AS: 09:30–16:00 waktu New York (otomatis ikut DST), tutup 13:00 ET pada hari early close.
   - IDX: Sen–Kam 09:00–12:00 dan 13:30–15:50 WIB; Jumat 09:00–11:30 dan 14:00–15:50 WIB.
   - AS: 09:30–16:00 waktu New York.
-  - Hari libur bursa belum dideteksi.
+  - Hari libur bursa 2026–2027 sudah dimasukkan (kalender BEI/KPEI dan NYSE). Untuk 2028 dan seterusnya, daftar `HOLI` di `app.js` perlu diperbarui.
 - Stop loss dan take profit opsional, dieksekusi otomatis saat Refresh harga menyentuh levelnya.
 - Portofolio per mata uang: kas, nilai saham, P/L belum terealisasi dan terealisasi, riwayat transaksi.
 - Progres tersimpan otomatis di browser (localStorage). Ada tombol **Ekspor**, **Impor**, dan **Reset**.
