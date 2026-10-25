@@ -241,7 +241,8 @@ function renderWallets() {
   }
 }
 function renderMarket() {
-  const m = ui.tab, d = DATA[m]; if (!d) return;
+  const m = ui.tab, d = DATA[m];
+  if (!d) { $('#list').innerHTML = ''; $('#mkt-info').textContent = 'Memuat data ' + (m === 'IDX' ? 'IDX' : 'AS') + '…'; loadData(m).then(renderAll).catch(e => status('Gagal memuat data: ' + e.message)); return; }
   const q = $('#q').value.trim().toUpperCase();
   let rows;
   if (q) { rows = d.s.filter(r => r[0].includes(q) || r[1].toUpperCase().includes(q)).slice(0, 80); $('#list-title').textContent = `Hasil pencarian (${rows.length})`; }
@@ -258,7 +259,7 @@ function renderScan() {
   const m = ui.scanM, k = +$('#scan-k').value, cap = $('#scan-cap').checked;
   $('#scan-cap-t').textContent = m === 'IDX' ? 'Batasi harga' : 'Hanya harga < $5';
   $('#scan-range').classList.toggle('hidden', m !== 'IDX' || !cap);
-  if (!DATA[m]) return;
+  if (!DATA[m]) { $('#scan-list') && ($('#scan-list').innerHTML = ''); loadData(m).then(renderScan).catch(e => status('Gagal memuat data: ' + e.message)); return; }
   const res = scanMarket(m, k, cap);
   const labels = ['Semua', 'Akumulasi kuat', 'Terkonfirmasi', 'Akumulasi', 'Hampir lolos', 'Waspada'];
   const ch = $('#scan-chips'); ch.innerHTML = '';
@@ -434,7 +435,8 @@ function bind() {
 }
 
 (async function init() {
-  bind(); fillCfg(); status('Memuat data…');
+  try { bind(); fillCfg(); } catch (e) { console.error(e); }
+  status('Memuat data…');
   try { await Promise.all([loadData('IDX'), loadData('US')]); status(`Data harian IDX per ${DATA.IDX.asof}, AS per ${DATA.US.asof}. Tekan Refresh untuk harga terbaru.`); }
   catch (e) { status('Gagal memuat data: ' + e.message); }
   renderAll();
