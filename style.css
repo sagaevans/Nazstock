@@ -75,3 +75,4 @@ details.rules li{margin:3px 0;font-size:14px}
 .card .l{font-size:12px;color:var(--mute)}.card .v{font-size:17px;font-weight:650;overflow-wrap:anywhere}
 footer{max-width:1100px;margin:0 auto;padding:16px;font-size:12px;color:var(--mute);border-top:1px solid var(--line)}
 @media(max-width:520px){h1{font-size:22px}.wallet .v{font-size:16px}table.list{font-size:13px}table.list th,table.list td{padding:8px}}
+.range{display:inline-flex;gap:6px;align-items:center;font-size:14px}.range input{width:110px}

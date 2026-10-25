@@ -26,7 +26,7 @@ function big(m, n) {
 const DATA = { IDX: null, US: null };
 const QUOTES = { IDX: {}, US: {} };       // t -> {p, o, h, l, v, ts}
 let state = load(KEY) || freshState();
-let cfg = Object.assign({ goapi: '', rapid: '', rhost: '', rpath: '', strict: false, hours: true }, load(CFGKEY) || {});
+let cfg = Object.assign({ goapi: '', rapid: '', rhost: '', rpath: '', strict: false, hours: true, idxMin: 0, idxMax: 1500 }, load(CFGKEY) || {});
 let ui = { tab: 'IDX', scanM: 'IDX', scanLabel: 'Semua', cur: null, side: 'buy', chart: null };
 
 function freshState() { return { IDR: { cash: START.IDR, pos: {}, hist: [], realized: 0 }, USD: { cash: START.USD, pos: {}, hist: [], realized: 0 } }; }
@@ -185,7 +185,11 @@ function scanMarket(m, k, cap) {
   const out = [];
   d.s.forEach(row => {
     const s = d.map[row[0]]; const lb = lastBar(s); if (!lb) return;
-    if (cap && lb.b[3] >= (m === 'IDX' ? 1500 : 5)) return;
+    if (cap) {
+      const c = lb.b[3];
+      if (m === 'US' && c >= 5) return;
+      if (m === 'IDX' && (c < (cfg.idxMin || 0) || (cfg.idxMax > 0 && c > cfg.idxMax))) return;
+    }
     const a = analyze(m, s, k, lb.i);
     let label = a && a.label;
     // Terkonfirmasi: sinyal Akumulasi kemarin, hari ini tutup di atas high candle sinyal
@@ -229,6 +233,8 @@ function renderMarket() {
 }
 function renderScan() {
   const m = ui.scanM, k = +$('#scan-k').value, cap = $('#scan-cap').checked;
+  $('#scan-cap-t').textContent = m === 'IDX' ? 'Batasi harga' : 'Hanya harga < $5';
+  $('#scan-range').classList.toggle('hidden', m !== 'IDX' || !cap);
   if (!DATA[m]) return;
   const res = scanMarket(m, k, cap);
   const labels = ['Semua', 'Akumulasi kuat', 'Terkonfirmasi', 'Akumulasi', 'Hampir lolos', 'Waspada'];
@@ -390,10 +396,13 @@ function bind() {
   $('#btn-refresh2').onclick = () => refresh(ui.scanM);
   document.querySelectorAll('#scan-mkt button').forEach(b => b.onclick = () => { document.querySelectorAll('#scan-mkt button').forEach(x => x.classList.toggle('on', x === b)); ui.scanM = b.dataset.m; renderScan(); });
   $('#scan-k').onchange = renderScan; $('#scan-cap').onchange = renderScan;
+  $('#scan-min').value = cfg.idxMin || ''; $('#scan-max').value = cfg.idxMax || '';
+  const onRange = () => { cfg.idxMin = Math.max(0, +$('#scan-min').value || 0); cfg.idxMax = Math.max(0, +$('#scan-max').value || 0); saveCfg(); renderScan(); };
+  $('#scan-min').oninput = onRange; $('#scan-max').oninput = onRange;
   $('#d-close').onclick = closeStock; $('#sheet').onclick = e => { if (e.target.id === 'sheet') closeStock(); };
   document.querySelectorAll('#d-side button').forEach(b => b.onclick = () => { ui.side = b.dataset.s; $('#d-msg').textContent = ''; renderDetail(); });
   $('#d-qty').oninput = estimate; $('#d-go').onclick = onTrade;
-  $('#btn-save').onclick = () => { cfg = { goapi: $('#k-goapi').value.trim(), rapid: $('#k-rapid').value.trim(), rhost: $('#k-rhost').value.trim(), rpath: $('#k-rpath').value.trim(), strict: $('#k-strict').checked, hours: $('#k-hours').checked }; saveCfg(); status('Pengaturan disimpan di browser ini.'); };
+  $('#btn-save').onclick = () => { cfg = { goapi: $('#k-goapi').value.trim(), rapid: $('#k-rapid').value.trim(), rhost: $('#k-rhost').value.trim(), rpath: $('#k-rpath').value.trim(), strict: $('#k-strict').checked, hours: $('#k-hours').checked, idxMin: cfg.idxMin, idxMax: cfg.idxMax }; saveCfg(); status('Pengaturan disimpan di browser ini.'); };
   $('#btn-export').onclick = () => { const a = el('a', { href: URL.createObjectURL(new Blob([JSON.stringify({ app: 'nazstock', v: 1, state }, null, 1)], { type: 'application/json' })), download: `nazstock-${new Date().toISOString().slice(0, 10)}.json` }); document.body.appendChild(a); a.click(); a.remove(); };
   $('#f-import').onchange = async e => { const f = e.target.files[0]; if (!f) return; try { const j = JSON.parse(await f.text()); if (!j.state || !j.state.IDR || !j.state.USD) throw 0; state = j.state; save(); status('Data simulasi berhasil diimpor.'); renderAll(); } catch { status('File impor tidak valid.'); } e.target.value = ''; };
   $('#btn-reset').onclick = () => { if (confirm('Reset saldo ke Rp10.000.000 dan $1.000, hapus semua posisi dan riwayat?')) { state = freshState(); save(); renderAll(); status('Simulasi direset.'); } };

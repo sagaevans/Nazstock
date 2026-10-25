@@ -46,13 +46,15 @@
     <div class="bar wrap">
       <div class="seg" id="scan-mkt"><button data-m="IDX" class="on">IDX</button><button data-m="US">AS</button></div>
       <label>Volume ≥ <select id="scan-k"><option>2</option><option selected>3</option><option>5</option></select>× median 20 hari</label>
-      <label><input type="checkbox" id="scan-cap" checked> Hanya harga &lt; Rp1.500 / &lt; $5</label>
+      <label><input type="checkbox" id="scan-cap" checked> <span id="scan-cap-t">Batasi harga</span></label>
+      <span id="scan-range" class="range">Rp <input id="scan-min" type="number" min="0" step="1" inputmode="numeric" placeholder="min"> – <input id="scan-max" type="number" min="0" step="1" inputmode="numeric" placeholder="maks"></span>
       <button id="btn-refresh2" class="primary">↻ Refresh harga</button>
     </div>
     <div class="chips" id="scan-chips"></div>
     <details class="rules">
       <summary>Aturan scanner</summary>
       <ul>
+        <li>Batas harga: IDX bisa diatur sendiri (default Rp0–Rp1.500); AS tetap &lt; $5.</li>
         <li>Volume hari ini ≥ 2×/3×/5× median volume 20 hari sebelumnya.</li>
         <li>Candle hijau: tutup &gt; buka dan tutup &gt; kemarin.</li>
         <li>Tutup di sepertiga atas range: (tutup−low)/(high−low) ≥ 0,67. Akumulasi kuat ≥ 0,80 dan tembus high 20 hari.</li>

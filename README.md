@@ -35,7 +35,7 @@ Saldo tidak saling dikonversi. Saham IDX dibeli dengan saldo Rupiah, saham AS de
 - Progres tersimpan otomatis di browser (localStorage). Ada tombol **Ekspor**, **Impor**, dan **Reset**.
 
 ### 5. Scanner lonjakan volume
-Default memindai saham IDX di bawah Rp1.500 dan saham AS di bawah US$5 (bisa dimatikan).
+Batas harga IDX bisa diisi sendiri (harga minimum dan maksimum, default Rp0–Rp1.500, tersimpan di browser). Saham AS tetap dibatasi di bawah US$5. Batas harga bisa dimatikan dengan mencentang ulang kotaknya.
 
 Aturan:
 1. Volume hari ini ≥ **2× / 3× / 5×** median volume 20 hari sebelumnya (bisa dipilih).
