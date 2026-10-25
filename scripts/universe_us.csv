@@ -1,0 +1,671 @@
+kode,nama,utama,lapis1
+MSFT,Microsoft Corporation,1,1
+GOOGL,Alphabet Inc.,1,1
+NVDA,NVIDIA Corporation,1,1
+AAPL,Apple Inc.,1,1
+AMZN,Amazon.com Inc,1,1
+META,Meta Platforms Inc,1,1
+TSLA,Tesla Inc,1,1
+AVGO,Broadcom Inc.,1,1
+BRK-B,Berkshire Hathaway Inc. New,1,1
+JPM,JP Morgan Chase & Co.,1,1
+V,Visa Inc.,1,1
+MA,Mastercard Incorporated,1,1
+LLY,Eli Lilly and Company,1,1
+WMT,Walmart Inc.,1,1
+COST,Costco Wholesale Corporation,1,1
+NFLX,Netflix Inc,1,1
+ORCL,Oracle Corporation,1,1
+AMD,Advanced Micro Devices Inc,1,1
+XOM,ExxonMobil Holdings Corporation,1,1
+UNH,UnitedHealth Group Incorporated (DE),1,1
+INTC,Intel Corporation,0,1
+CRM,Salesforce Inc,0,1
+ADBE,Adobe Inc.,0,1
+PLTR,Palantir Technologies Inc.,0,1
+COIN,Coinbase Global Inc,0,1
+MSTR,Strategy Inc,0,1
+HOOD,Robinhood Markets Inc,0,1
+SOFI,SoFi Technologies Inc,0,1
+UBER,Uber Technologies Inc,0,1
+SHOP,Shopify Inc.,0,1
+SNOW,Snowflake Inc.,0,1
+CRWD,CrowdStrike Holdings Inc,0,1
+PANW,Palo Alto Networks Inc,0,1
+MU,Micron Technology Inc,0,1
+QCOM,QUALCOMM Incorporated,0,1
+ARM,Arm Holdings plc,0,1
+SMCI,Super Micro Computer Inc,0,1
+TSM,Taiwan Semiconductor Manufacturing Company Ltd.,0,1
+ASML,ASML Holding N.V.,0,1
+BAC,Bank of America Corporation,0,1
+WFC,Wells Fargo & Company,0,1
+GS,Goldman Sachs Group Inc (The),0,1
+PYPL,PayPal Holdings Inc,0,1
+CVX,Chevron Corporation,0,1
+OXY,Occidental Petroleum Corporation,0,1
+BA,Boeing Company (The),0,1
+DIS,Walt Disney Company (The),0,1
+NKE,Nike Inc,0,1
+SBUX,Starbucks Corporation,0,1
+MCD,McDonald's Corporation,0,1
+TGT,Target Corporation,0,1
+KO,Coca-Cola Company (The),0,1
+PEP,PepsiCo Inc,0,1
+PFE,Pfizer Inc,0,1
+MRK,Merck & Company Inc (new),0,1
+JNJ,Johnson & Johnson,0,1
+RIVN,Rivian Automotive Inc,0,1
+LCID,Lucid Group Inc,0,1
+NIO,"NIO Inc. American depositary shares, each  representing one Class A ordinary share",0,1
+F,Ford Motor Company,0,1
+GM,General Motors Company,0,1
+IONQ,IonQ Inc,0,1
+RGTI,Rigetti Computing Inc,0,1
+SOUN,SoundHound AI Inc,0,1
+RKLB,Rocket Lab Corporation,0,1
+ASTS,AST SpaceMobile Inc,0,1
+HIMS,Hims & Hers Health Inc Class A,0,1
+DKNG,DraftKings Inc.,0,1
+ABNB,Airbnb Inc,0,1
+SPOT,Spotify Technology S.A. Ordinary Shares,0,1
+CSCO,Cisco Systems Inc,0,1
+IBM,International Business Machines Corporation,0,1
+T,AT&T Inc.,0,1
+VZ,Verizon Communications Inc.,0,1
+PLUG,Plug Power Inc,0,1
+OPEN,Opendoor Technologies Inc,0,1
+GRAB,Grab Holdings Limited,0,1
+SIRI,SiriusXM Holdings Inc.,0,1
+ABAT,American Battery Technology Company,0,1
+ABEO,Abeona Therapeutics Inc.,0,1
+ABOS,Acumen Pharmaceuticals Inc,0,1
+ABR,Arbor Realty Trust,0,1
+ABUS,Arbutus Biopharma Corporation,0,1
+ACB,Aurora Cannabis Inc.,0,1
+ACCO,Acco Brands Corporation,0,1
+ACDC,ProFrac Holding Corp.,0,1
+ACET,Adicet Bio Inc,0,1
+ACHR,Archer Aviation Inc. Class A,0,1
+ACHV,Achieve Life Sciences Inc,0,1
+ACP,abrdn Income Credit Strategies Fund Common Shares,0,1
+ACRE,Ares Commercial Real Estate Corporation,0,1
+ACRS,Aclaris Therapeutics Inc,0,1
+ADCT,ADC Therapeutics SA Common Shares,0,1
+ADT,ADT Inc.,0,1
+ADTN,ADTRAN Holdings Inc,0,1
+AGEN,Agenus Inc.,0,1
+AGNT,AGNT Inc,0,1
+AHCO,AdaptHealth Corp.,0,1
+AHRT,AH Realty Trust Inc,0,1
+AIB,AIB Data Centers Inc.,0,1
+AIBZ,Bitzero Holdings Inc.,0,1
+AIOT,PowerFleet Inc,0,1
+AIRJ,AirJoule Technologies Corporation,0,1
+AIRO,AIRO Group Holdings Inc,0,1
+AIRS,AirSculpt Technologies Inc,0,1
+AISP,"Airship AI Holdings, Inc",0,1
+AIV,Apartment Investment and Management Company,0,1
+AKBA,Akebia Therapeutics Inc,0,1
+ALDX,Aldeyra Therapeutics Inc,0,1
+ALEC,Alector Inc,0,1
+ALLO,Allogene Therapeutics Inc,0,1
+ALMS,Alumis Inc.,0,1
+ALMU,Aeluma Inc,0,1
+ALT,Altimmune Inc,0,1
+ALTG,Alta Equipment Group Inc. Class A,0,1
+ALTO,Alto Ingredients Inc,0,1
+ALVO,Alvotech,0,1
+ALXO,ALX Oncology Holdings Inc.,0,1
+AMBP,Ardagh Metal Packaging S.A. Ordinary Shares,0,1
+AMC,AMC Entertainment Holdings Inc Class A,0,1
+AMOD,Alpha Modus Holdings Inc,0,1
+AMPG,Amplitech Group Inc,0,1
+AMPY,Amplify Energy Corp.,0,1
+AMTX,"Aemetis, Inc",0,1
+ANGI,Angi Inc.,0,1
+ANGX,Angel Studios Inc Class A,0,1
+ANNX,Annexon Inc,0,1
+ANTX,AN2 Therapeutics Inc,0,1
+APUS,Apimeds Pharmaceuticals US Inc,0,1
+AQN,Algonquin Power & Utilities Corp. Common Shares,0,1
+AQST,Aquestive Therapeutics Inc,0,1
+ARDX,Ardelyx Inc,0,1
+AREC,American Resources Corporation,0,1
+ARI,"Apollo Commercial Real Estate Finance, Inc",0,1
+ARKO,ARKO Corp.,0,1
+ARRY,Array Technologies Inc,0,1
+ARTV,Artiva Biotherapeutics Inc,0,1
+ASG,Liberty All-Star Growth Fund Inc,0,1
+ASLE,AerSale Corporation,0,1
+ASM,Avino Silver & Gold Mines Ltd. Common Shares (Canada),0,1
+ASPI,ASP Isotopes Inc.,0,1
+ASPN,Aspen Aerogels Inc,0,1
+ASTL,Algoma Steel Group Inc.,0,1
+ATOM,Atomera Incorporated,0,1
+AUR,Aurora Innovation Inc,0,1
+AURA,Aura Biosciences Inc,0,1
+AVIR,Atea Pharmaceuticals Inc,0,1
+AVR,Anteris Technologies Global Corp.,0,1
+AVTX,Avalo Therapeutics Inc,0,1
+AVX,Avax One Technology Ltd.,0,1
+AVXL,Anavex Life Sciences Corp.,0,1
+AZ,A2Z Cust2Mate Solutions Corp.,0,1
+BAK,Braskem SA ADR,0,1
+BATL,Battalion Oil Corporation,0,1
+BBAI,BigBear.ai Inc,0,1
+BBOT,BridgeBio Oncology Therapeutics Inc,0,1
+BDN,Brandywine Realty Trust,0,1
+BDTX,Black Diamond Therapeutics Inc,0,1
+BFLY,Butterfly Network Inc Class A,0,1
+BGS,B&G Foods Inc,0,1
+BGY,Blackrock Enhanced International Dividend Trust,0,1
+BHC,Bausch Health Companies Inc.,0,1
+BHR,Braemar Hotels & Resorts Inc.,0,1
+BIOA,BioAge Labs Inc,0,1
+BKKT,Bakkt Inc Class A,0,1
+BLDP,Ballard Power Systems Inc,0,1
+BLND,Blend Labs Inc Class A,0,1
+BMBL,Bumble Inc.,0,1
+BMEA,Biomea Fusion Inc,0,1
+BMGL,Basel Medical Group Ltd,0,1
+BNC,BNB Standard Corporation,0,1
+BORR,Borr Drilling Limited Common Shares,0,1
+BRBS,Blue Ridge Bankshares Inc,0,1
+BTBT,Bit Digital Inc,0,1
+BTCS,BTCS Inc.,0,1
+BTDR,Bitdeer Technologies Group,0,1
+BTE,Baytex Energy Corp Common Shares,0,1
+BTG,B2Gold Corp Common shares (Canada),0,1
+BTGO,BitGo Holdings Inc Class A,0,1
+BTQ,BTQ Technologies Corp.,0,1
+BULL,Webull Corporation,0,1
+BUR,Burford Capital Limited Ordinary Shares,0,1
+BURU,Nuburu Inc,0,1
+BW,Babcock & Wilcox Enterprises Inc,0,1
+BYRN,Byrna Technologies Inc,0,1
+CABA,Cabaletta Bio Inc,0,1
+CABO,Cable One Inc,0,1
+CANG,Cango Inc. Class A Ordinary Shares,0,1
+CAPR,Capricor Therapeutics Inc,0,1
+CATX,Perspective Therapeutics Inc,0,1
+CCCC,C4 Therapeutics Inc,0,1
+CDXS,Codexis Inc,0,1
+CDZI,Cadiz Inc,0,1
+CERS,Cerus Corporation,0,1
+CGC,Canopy Growth Corporation,0,1
+CHRS,Coherus Oncology Inc,0,1
+CIK,UBS Asset Management Income Fund Inc,0,1
+CION,CION Investment Corporation,0,1
+CLM,Cornerstone Strategic Investment Fund Inc Common Shares,0,1
+CLNE,Clean Energy Fuels Corp.,0,1
+CLOV,"Clover Health Investments, Corp.",0,1
+CLVT,Clarivate Plc Ordinary Shares,0,1
+CMPX,Compass Therapeutics Inc,0,1
+CMRC,Commerce.com Inc,0,1
+CNDT,Conduent Incorporated,0,1
+CNTB,Connect Biopharma Holdings Limited,0,1
+CNTN,Canton Strategic Holdings Inc,0,1
+COTY,Coty Inc. Class A,0,1
+COUR,Coursera Inc,0,1
+CRBP,Corbus Pharmaceuticals Holdings Inc,0,1
+CRBU,Caribou Biosciences Inc,0,1
+CRCT,Cricut Inc,0,1
+CRDL,Cardiol Therapeutics Inc.,0,1
+CRF,Cornerstone Total Return Fund Inc (The),0,1
+CRML,Critical Metals Corp.,0,1
+CRON,Cronos Group Inc.,0,1
+CTKB,Cytek Biosciences Inc,0,1
+CTMX,CytomX Therapeutics Inc,0,1
+CURI,CuriosityStream Inc.,0,1
+CWH,Camping World Holdings Inc Class A,0,1
+CXDO,Crexendo Inc,0,1
+CXM,Sprinklr Inc Class A,0,1
+CYPH,Cypherpunk Technologies Inc.,0,1
+DBI,Designer Brands Inc. Class A,0,1
+DC,Dakota Gold Corp.,0,1
+DCH,Dauch Corporation,0,1
+DDD,3D Systems Corporation,0,1
+DERM,Journey Medical Corporation,0,1
+DFDV,DeFi Development Corp.,0,1
+DFNS,T3 Defense Inc.,0,1
+DGXX,Digi Power X Inc.,0,1
+DJT,Trump Media & Technology Group Corp.,0,1
+DKI,DarkIris Inc.,0,1
+DNN,Denison Mines Corp Ordinary Shares (Canada),0,1
+DNUT,Krispy Kreme Inc,0,1
+DPRO,Draganfly Inc.,0,1
+DSM,BNY Mellon Strategic Municipal Bond Fund Inc,0,1
+DSX,Diana Shipping inc. common stock,0,1
+DTIL,Precision BioSciences Inc,0,1
+DUOT,Duos Technologies Group Inc,0,1
+DVLT,Datavault AI Inc.,0,1
+EARN,Ellington Credit Company Common Shares of Beneficial Interest,0,1
+EBS,Emergent BioSolutions Inc.,0,1
+ECC,Eagle Point Credit Company Common Share of Beneficial Interest,0,1
+EDD,Morgan Stanley Emerging Markets Domestic Debt Fund Inc,0,1
+EDIT,Editas Medicine Inc,0,1
+EGAN,eGain Corporation,0,1
+EGHT,8x8 Inc,0,1
+EGY,VAALCO Energy Inc,0,1
+EH,EHang Holdings Limited,0,1
+ELDN,Eledon Pharmaceuticals Inc,0,1
+ELVA,Electrovaya Inc.,0,1
+EMAT,Evolution Metals & Technologies Corp.,0,1
+EMBC,Embecta Corp.,0,1
+ENGN,enGene Therapeutics Inc.,0,1
+ENGS,Energys Group Limited,0,1
+ENTX,Entera Bio Ltd.,0,1
+ENVX,Enovix Corporation,0,1
+EOSE,Eos Energy Enterprises Inc,0,1
+EPM,Evolution Petroleum Corporation Inc,0,1
+EPRX,Eupraxia Pharmaceuticals Inc.,0,1
+ERII,Energy Recovery Inc,0,1
+ESRT,Empire State Realty Trust Inc Class A,0,1
+EU,enCore Energy Corp.,0,1
+EVC,Entravision Communications Corporation,0,1
+EVEX,Eve Holding Inc,0,1
+EVGO,EVgo Inc.,0,1
+EVH,"Evolent Health, Inc Class A",0,1
+EVLV,Evolv Technologies Holdings Inc,0,1
+EVMN,Evommune Inc,0,1
+EVTL,Vertical Aerospace Ltd. Ordinary Shares,0,1
+EYPT,EyePoint Inc,0,1
+FAC,Factorial Energy Inc.,0,1
+FATE,Fate Therapeutics Inc,0,1
+FBRT,Franklin BSP Realty Trust Inc,0,1
+FEAM,5E Advanced Materials Inc,0,1
+FF,FutureFuel Corp.  Common shares,0,1
+FFAI,Faraday Future Intelligent Electric Inc.,0,1
+FHTX,Foghorn Therapeutics Inc.,0,1
+FIP,FTAI Infrastructure Inc.,0,1
+FISN,Deep Fission Inc,0,1
+FJET,Starfighters Space Inc,0,1
+FLNC,Fluence Energy Inc,0,1
+FLO,Flowers Foods Inc,0,1
+FMC,FMC Corporation,0,1
+FNGR,FingerMotion Inc,0,1
+FNKO,Funko Inc,0,1
+FOSL,Fossil Group Inc,0,1
+FRGT,Freight Technologies Inc,0,1
+FRMI,Fermi Inc.,0,1
+FTF,Franklin Limited Duration Income Trust Common Shares of Beneficial Interest,0,1
+FULC,Fulcrum Therapeutics Inc,0,1
+FUN,Six Flags Entertainment Corporation New,0,1
+FWDI,Forward Industries Inc,0,1
+GAB,Gabelli Equity Trust Inc (The),0,1
+GAU,Galiano Gold Inc.,0,1
+GCTS,GCT Semiconductor Holding Inc,0,1
+GDRX,GoodRx Holdings Inc,0,1
+GEMI,Gemini Space Station Inc,0,1
+GENI,Genius Sports Limited Ordinary Shares,0,1
+GERN,Geron Corporation,0,1
+GEVO,Gevo Inc,0,1
+GFR,Greenfire Resources Ltd. Common Shares,0,1
+GGB,Gerdau S.A.,0,1
+GGN,"GAMCO Global Gold, Natural Resources & Income Trust",0,1
+GGT,Gabelli Multi-Media Trust Inc (The),0,1
+GLAS,Glass House Brands Inc. Subordinate Voting Shares,0,1
+GLND,Greenland Energy Company,0,1
+GLOO,Gloo Holdings Inc,0,1
+GMTL,Guardian Metal Resources PLC ADS,0,1
+GOGO,Gogo Inc.,0,1
+GORO,Goldgroup Mining Inc. Common Shares,0,1
+GPRO,GoPro Inc,0,1
+GPUS,Hyperscale Data Inc,0,1
+GRML,Greenland Mines Ltd,0,1
+GRNT,Granite Ridge Resources Inc,0,1
+GROY,Gold Royalty Corp. Common Shares,0,1
+GSIT,GSI Technology Inc,0,1
+GSM,Ferroglobe PLC,0,1
+GT,The Goodyear Tire & Rubber Company,0,1
+GTM,ZoomInfo Technologies Inc.,0,1
+GTN,Gray Media Inc,0,1
+GUT,Gabelli Utility Trust (The),0,1
+HDSN,Hudson Technologies Inc,0,1
+HITI,High Tide Inc.,0,1
+HIVE,HIVE Digital Technologies Ltd,0,1
+HIX,Western Asset High Income Fund II Inc.,0,1
+HLLY,Holley Inc.,0,1
+HNST,The Honest Company Inc,0,1
+HRZN,Horizon Technology Finance Corporation,0,1
+HSLV,Highlander Silver Corp. Common Shares,0,1
+HTZ,"Hertz Global Holdings, Inc",0,1
+HUCK,Huckleberry.ai Inc,0,1
+HUMA,Humacyte Inc,0,1
+HYLN,Hyliion Holdings Corp. Class A,0,1
+IAUX,i-80 Gold Corp. Common Shares,0,1
+ICL,ICL Group Ltd. Ordinary Shares,0,1
+IHRT,iHeartMedia Inc,0,1
+III,Information Services Group Inc,0,1
+IMPP,Imperial Petroleum Inc.,0,1
+IMRX,Immuneering Corporation,0,1
+IMSR,Terrestrial Energy Inc.,0,1
+INDI,indie Semiconductor Inc,0,1
+INDP,Indaptus Therapeutics Inc,0,1
+INN,Summit Hotel Properties Inc,0,1
+INO,Inovio Pharmaceuticals Inc,0,1
+INSE,Inspired Entertainment Inc,0,1
+INV,Innventure Inc,0,1
+IPSC,Century Therapeutics Inc,0,1
+IRD,Opus Genetics Inc,0,1
+IRWD,Ironwood Pharmaceuticals Inc,0,1
+ITG,ITG Inc,0,1
+ITRG,Integra Resources Corp. Common Shares,0,1
+IVA,Inventiva S.A.,0,1
+IVR,INVESCO MORTGAGE CAPITAL INC,0,1
+IVVD,Invivyd Inc,0,1
+JAGX,Jaguar Health Inc,0,1
+JBI,Janus International Group Inc,0,1
+JBLU,JetBlue Airways Corporation,0,1
+JDZG,JIADE LIMITED,0,1
+JELD,JELD-WEN Holding Inc,0,1
+JOBY,Joby Aviation Inc,0,1
+JQC,Nuveen Credit Strategies Income Fund Shares of Beneficial Interest,0,1
+KDK,Kodiak AI Inc,0,1
+KEEL,Keel Infrastructure Corp.,0,1
+KLC,KinderCare Learning Companies Inc,0,1
+KOPN,Kopin Corporation,0,1
+KOS,Kosmos Energy Ltd. Common Shares (DE),0,1
+KREF,KKR Real Estate Finance Trust Inc.,0,1
+KULR,KULR Technology Group Inc,0,1
+KYTX,Kyverna Therapeutics Inc,0,1
+LAC,Lithium Americas Corp. Common Shares,0,1
+LAES,SEALSQ Corp,0,1
+LAR,Lithium Argentina AG Common Shares,0,1
+LCTX,Lineage Cell Therapeutics Inc,0,1
+LDI,loanDepot Inc Class A,0,1
+LENZ,LENZ Therapeutics Inc,0,1
+LEO,BNY Mellon Strategic Municipals Inc,0,1
+LFCR,Lifecore Biomedical Inc,0,1
+LFMD,LifeMD Inc,0,1
+LODE,Comstock Inc.,0,1
+LPL,"LG Display Co, Ltd AMERICAN DEPOSITORY SHARES",0,1
+LRMR,Larimar Therapeutics Inc,0,1
+LTBR,Lightbridge Corporation,0,1
+LTRX,Lantronix Inc,0,1
+LUCD,Lucid Diagnostics Inc.,0,1
+LUMN,Lumen Technologies Inc,0,1
+LWLG,Lightwave Logic Inc,0,1
+LXEO,Lexeo Therapeutics Inc,0,1
+LXRX,Lexicon Pharmaceuticals Inc,0,1
+LZ,LegalZoom.com Inc,0,1
+LZM,Lifezone Metals Limited Ordinary Shares,0,1
+MBI,MBIA Inc.,0,1
+MBLY,Mobileye Global Inc.,0,1
+MDXG,"MiMedx Group, Inc",0,1
+MEDS,DataMeds AI Inc,0,1
+MFA,MFA Financial Inc,0,1
+MFM,Aberdeen Municipal Income Fund Common Shares of Beneficial Interest,0,1
+MGNX,MacroGenics Inc,0,1
+MITT,TPG Mortgage Investment Trust Inc,0,1
+MMT,Aberdeen Multi-Market Income Fund Common Shares of Beneficial Interest,0,1
+MNKD,MannKind Corporation,0,1
+MNTK,Montauk Renewables Inc,0,1
+MNTS,Momentus Inc.,0,1
+MPT,Medical Properties Trust Inc common stock,0,1
+MRLN,Merlin Inc,0,1
+MVIS,MicroVision Inc,0,1
+MVST,Microvast Holdings Inc,0,1
+MX,Magnachip Semiconductor Corporation,0,1
+MYGN,Myriad Genetics Inc,0,1
+NABL,N-able Inc,0,1
+NAGE,Niagen Bioscience Inc,0,1
+NAK,"Northern Dynasty Minerals, Ltd.",0,1
+NANO,Forge Nano Holdings Inc.,0,1
+NAUT,Nautilus Biotechnology Inc,0,1
+NB,NioCorp Developments Ltd.,0,1
+NCMI,National CineMedia Inc,0,1
+NCPL,Netcapital Inc.,0,1
+NEOV,NeoVolta Inc.,0,1
+NEWP,New Pacific Metals Corp. Common Shares,0,1
+NEXT,NextDecade Corporation,0,1
+NFE,New Fortress Energy Inc.,0,1
+NFGC,New Found Gold Corp Common Shares,0,1
+NG,Novagold Resources Inc.,0,1
+NHS,Neuberger High Yield Strategies Fund Inc.,0,1
+NIVF,NewGenIvf Group Limited,0,1
+NKTX,Nkarta Inc,0,1
+NMFC,New Mountain Finance Corporation,0,1
+NNBR,NN Inc,0,1
+NRGV,Energy Vault Holdings Inc,0,1
+NRXP,NRX Pharmaceuticals Inc,0,1
+NSLR,Neostellar Capital Corp.,0,1
+NUAI,New Era Energy & Digital Inc,0,1
+NUS,Nu Skin Enterprises Inc,0,1
+NUVB,Nuvation Bio Inc. Class A,0,1
+NVA,Nova Minerals Corp,0,1
+NWCL,newcleo plc,0,1
+NWL,Newell Brands Inc.,0,1
+NXH,Neighborhood Intelligence Inc,0,1
+OABI,OmniAb Inc,0,1
+OBIO,Orchestra BioMed Holdings Inc,0,1
+OCGN,Ocugen Inc,0,1
+OCUL,Ocular Therapeutix Inc,0,1
+OEC,Orion S.A. Common Shares,0,1
+OGG,Osisko Gold Group Inc. Common Shares,0,1
+OI,O-I Glass Inc,0,1
+OLB,The OLB Group Inc,0,1
+OLMA,Olema Pharmaceuticals Inc,0,1
+ONDS,Ondas Inc,0,1
+OPFI,OppFi Inc. Class A,0,1
+OPK,Opko Health Inc,0,1
+OPTU,Optimum Communications Inc Class A common stock,0,1
+OPTX,Syntec Optics Holdings Inc,0,1
+ORBS,Eightco Holdings Inc.,0,1
+ORC,Orchid Island Capital Inc,0,1
+OSG,Octave Specialty Group Inc,0,1
+OSS,One Stop Systems Inc,0,1
+OSUR,OraSure Technologies Inc,0,1
+OTLK,Outlook Therapeutics Inc,0,1
+OVID,Ovid Therapeutics Inc.,0,1
+OXLC,Oxford Lane Capital Corp.,0,1
+OXSQ,Oxford Square Capital Corp.,0,1
+PACB,Pacific Biosciences of California Inc,0,1
+PACK,Ranpak Holdings Corp Class A,0,1
+PAL,Proficient Auto Logistics Inc,0,1
+PALI,Palisade Bio Inc,0,1
+PCT,PureCycle Technologies Inc,0,1
+PDSB,PDS Biotechnology Corporation,0,1
+PDYN,Palladyne AI Corp.,0,1
+PEPG,PepGen Inc.,0,1
+PFL,PIMCO Income Strategy Fund Shares of Beneficial Interest,0,1
+PFLT,PennantPark Floating Rate Capital Ltd.,0,1
+PFN,PIMCO Income Strategy Fund II,0,1
+PGEN,Precigen Inc,0,1
+PHAT,Phathom Pharmaceuticals Inc,0,1
+PHK,Pimco High Income Fund,0,1
+PLAY,Dave & Buster's Entertainment Inc,0,1
+PLBL,Polibeli Group Ltd,0,1
+PLG,Platinum Group Metals Ltd. Ordinary Shares (Canada),0,1
+PLTK,Playtika Holding Corp.,0,1
+PLX,Protalix BioTherapeutics Inc (DE),0,1
+PML,Pimco Municipal Income Fund II Common Shares of Beneficial Interest,0,1
+PMM,Franklin Managed Municipal Income Trust Shares of Beneficial Interest,0,1
+PNNT,PennantPark Investment Corporation,0,1
+POET,POET Technologies Inc.,0,1
+POWW,Outdoor Holding Company,0,1
+PRLD,Prelude Therapeutics Incorporated,0,1
+PRME,Prime Medicine Inc,0,1
+PROK,ProKidney Corp.,0,1
+PRQR,ProQR Therapeutics N.V.,0,1
+PSEC,Prospect Capital Corporation,0,1
+PSFE,Paysafe Limited Common Shares,0,1
+PSIG,PS International Group Ltd.,0,1
+PSNY,Polestar Automotive Holding UK Limited,0,1
+PSQL,Pasqal Holding SA,0,1
+PTLO,Portillo's Inc.,0,1
+PTON,Peloton Interactive Inc,0,1
+PUSA,Powerus Corporation,0,1
+PYXS,Pyxis Oncology Inc,0,1
+QNC,Quantum eMotion Corp. Common Shares,0,1
+QS,QuantumScape Corporation,0,1
+QSI,Quantum-Si Incorporated,0,1
+QTEX,QTREX Quantum Ltd.,0,1
+QTRX,Quanterix Corporation,0,1
+QUBT,Quantum Computing Inc.,0,1
+RAIL,Freightcar America Inc,0,1
+RBBN,Ribbon Communications Inc.,0,1
+RC,Ready Capital Corporation,0,1
+RCAT,Red Cat Holdings Inc,0,1
+RCKT,Rocket Pharmaceuticals Inc,0,1
+REI,Ring Energy Inc,0,1
+RES,RPC Inc,0,1
+RETO,ReTo Eco-Solutions Inc,0,1
+RFIL,"RF Industries, Ltd.",0,1
+RGNX,REGENXBIO Inc.,0,1
+RGP,Resources Connection Inc,0,1
+RIG,Transocean Ltd (Switzerland),0,1
+RILY,BRC Group Holdings Inc,0,1
+RLMD,Relmada Therapeutics Inc,0,1
+RMNI,Rimini Street Inc,0,1
+RNAC,Cartesian Therapeutics Inc,0,1
+RNW,ReNew Energy Global plc,0,1
+RPAY,Repay Holdings Corporation,0,1
+RPGL,Republic Power Group Limited,0,1
+RR,Richtech Robotics Inc.,0,1
+RUM,RUM Group Inc.,0,1
+RWAY,Runway Growth Finance Corp.,0,1
+RWT,Redwood Trust Inc,0,1
+RXRX,Recursion Pharmaceuticals Inc,0,1
+RXST,RxSight Inc,0,1
+RXT,Rackspace Technology Inc,0,1
+RYAM,Rayonier Advanced Materials Inc.,0,1
+RZLT,Rezolute Inc,0,1
+RZLV,Rezolve AI PLC,0,1
+SABR,Sabre Corporation,0,1
+SABS,SAB Biotherapeutics Inc,0,1
+SAFX,XCF Global Inc,0,1
+SAIQ,WISeSat.Space Holdings Corp.,0,1
+SANA,Sana Biotechnology Inc,0,1
+SATL,Satellogic Inc.,0,1
+SCZM,Santacruz Silver Mining Ltd.,0,1
+SDEV,Stablecoin Development Corporation,0,1
+SERV,Serve Robotics Inc.,0,1
+SES,SES AI Corporation Class A,0,1
+SEVN,Seven Hills Realty Trust,0,1
+SFIX,Stitch Fix Inc,0,1
+SHFS,SHF Holdings Inc,0,1
+SHMD,SCHMID Group N.V.,0,1
+SID,Companhia Siderurgica Nacional S.A.,0,1
+SIDU,Sidus Space Inc,0,1
+SIGA,SIGA Technologies Inc.,0,1
+SION,Sionna Therapeutics Inc,0,1
+SITC,SITE Centers Corp.,0,1
+SJT,San Juan Basin Royalty Trust,0,1
+SKYA,SkyAI Inc,0,1
+SKYQ,Sky Quarry Inc.,0,1
+SLDB,Solid Biosciences Inc.,0,1
+SLDP,Solid Power Inc,0,1
+SLI,Standard Lithium Ltd. Common Shares,0,1
+SLNH,Soluna Holdings Inc,0,1
+SMR,NuScale Power Corporation Class A,0,1
+SNAP,Snap Inc. Class A,0,1
+SND,Smart Sand Inc,0,1
+SNDL,SNDL Inc.,0,1
+SOAR,SOAR AI Inc Class A,0,1
+SOC,Sable Offshore Corp.,0,1
+SPCE,Virgin Galactic Holdings Inc,0,1
+SPRY,ARS Pharmaceuticals Inc,0,1
+SRFM,Surf Air Mobility Inc.,0,1
+SRI,Stoneridge Inc,0,1
+SRTA,Strata Critical Medical Inc,0,1
+SSP,E.W. Scripps Company (The),0,1
+SSTK,Shutterstock Inc,0,1
+SSYS,"Stratasys, Ltd.",0,1
+STFS,Star Fashion Culture Holdings Limited,0,1
+STIM,Neuronetics Inc,0,1
+STLA,Stellantis N.V. Common Shares,0,1
+STLN,Starling Oncology Inc,0,1
+STTK,Shattuck Labs Inc,0,1
+STUB,StubHub Holdings Inc Class A,0,1
+SUPX,SuperX AI Technology Limited,0,1
+SVC,Service Properties Trust,0,1
+SVCO,Silvaco Group Inc,0,1
+SVIA,Silvia Inc,0,1
+SVRA,Savara Inc,0,1
+SWIM,Latham Group Inc,0,1
+TARA,Protara Therapeutics Inc,0,1
+TBLA,Taboola.com Ltd.,0,1
+TCPC,BlackRock TCP Capital Corp.,0,1
+TCRT,Alaunos Therapeutics Inc,0,1
+TDAY,USA TODAY Co. Inc,0,1
+TDOC,Teladoc Health Inc,0,1
+TDUP,ThredUp Inc.,0,1
+TE,T1 Energy Inc.,0,1
+TENX,Tenax Therapeutics Inc,0,1
+THM,"International Tower Hill Mines, Ltd. Ordinary Shares (Canada)",0,1
+TKC,Turkcell Iletisim Hizmetleri AS,0,1
+TKNO,Alpha Teknova Inc,0,1
+TLRY,Tilray Brands Inc,0,1
+TLS,Telos Corporation,0,1
+TMC,TMC the metals company Inc.,0,1
+TMQ,Trilogy Metals Inc.,0,1
+TNXP,Tonix Pharmaceuticals Holding Corp.,0,1
+TNYA,Tenaya Therapeutics Inc,0,1
+TOYO,"TOYO Co., Ltd",0,1
+TRDA,Entrada Therapeutics Inc,0,1
+TROX,Tronox Holdings plc Ordinary Shares (UK),0,1
+TRTX,TPG RE Finance Trust Inc,0,1
+TRX,TRX Gold Corporation,0,1
+TSHA,Taysha Gene Therapies Inc,0,1
+TSSI,TSS Inc,0,1
+TTGT,TechTarget Inc,0,1
+TTI,Tetra Technologies Inc,0,1
+TV,Grupo Televisa S.A.B.,0,1
+TWI,Titan International Inc (DE),0,1
+UA,Under Armour Inc Class C,0,1
+UAA,Under Armour Inc Class A,0,1
+UIS,Unisys Corporation New,0,1
+ULCC,Frontier Group Holdings Inc,0,1
+UNCY,Unicycive Therapeutics Inc,0,1
+UPB,Upstream Bio Inc,0,1
+UPXI,Upexi Inc,0,1
+URG,Ur Energy Inc Common Shares (Canada),0,1
+UROY,Uranium Royalty Corp.,0,1
+USA,Liberty All-Star Equity Fund,0,1
+USAS,"Americas Gold and Silver Corporation Common Shares, no par value",0,1
+UWMC,UWM Holdings Corporation Class A,0,1
+VCIG,VCI Global Limited,0,1
+VEEA,Veea Inc.,0,1
+VELO,Velo3D Inc,0,1
+VERI,Veritone Inc,0,1
+VFF,Village Farms International Inc,0,1
+VFS,VinFast Auto Ltd.,0,1
+VGZ,Vista Gold Corp,0,1
+VISN,Vistance Networks Inc,0,1
+VIVO,VivoPower PLC,0,1
+VNDA,Vanda Pharmaceuticals Inc.,0,1
+VOXR,Vox Royalty Corp.,0,1
+VRA,Vera Bradley Inc,0,1
+VRRM,Verra Mobility Corporation,0,1
+VTEX,VTEX Class A Common Shares,0,1
+VUZI,Vuzix Corporation,0,1
+VVR,Invesco Senior Income Trust (DE),0,1
+VYGR,Voyager Therapeutics Inc,0,1
+VZLA,Vizsla Silver Corp. Common Shares,0,1
+WEN,Wendy's Company (The),0,1
+WETO,Wetour Robotics Limited,0,1
+WFF,WF Holding Limited,0,1
+WHLR,Wheeler Real Estate Investment Trust Inc,0,1
+WHWK,Whitehawk Therapeutics Inc,0,1
+WIT,Wipro Limited,0,1
+WOOF,Petco Health and Wellness Company Inc,0,1
+WRN,Western Copper and Gold Corporation,0,1
+WTI,W&T Offshore Inc,0,1
+WU,Western Union Company (The),0,1
+WVE,Wave Life Sciences Inc,0,1
+WYY,WidePoint Corporation,0,1
+XFOR,X4 Pharmaceuticals Inc,0,1
+XHLD,TEN Holdings Inc,0,1
+XNDU,Xanadu Quantum Technologies Limited,0,1
+XPER,Xperi Inc.,0,1
+XPOF,Xponential Fitness Inc Class A,0,1
+XRX,Xerox Holdings Corporation,0,1
+XXI,Twenty One Capital Inc Class A,0,1
+YSS,York Space Systems Inc.,0,1
+ZENA,ZenaTech Inc,0,1
+ZIP,ZipRecruiter Inc Class A,0,1
+ZNTL,Zentalis Pharmaceuticals Inc,0,1
+ZSQR,Z Squared Inc.,0,1
+ZURA,Zura Bio Limited,0,1

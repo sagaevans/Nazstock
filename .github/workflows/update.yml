@@ -1,0 +1,55 @@
+name: Update data harian
+
+on:
+  schedule:
+    - cron: "0 10 * * 1-5"    # 17:00 WIB, sekitar 1 jam setelah BEI tutup
+    - cron: "30 21 * * 1-5"   # 04:30 WIB, setelah bursa AS tutup
+  workflow_dispatch:
+    inputs:
+      market:
+        description: "Pasar yang diperbarui: IDX, US, atau ALL"
+        default: "ALL"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install
+        run: pip install yfinance pandas numpy
+
+      - name: Tentukan pasar
+        id: m
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "market=${{ github.event.inputs.market }}" >> $GITHUB_OUTPUT
+          elif [ "${{ github.event.schedule }}" = "0 10 * * 1-5" ]; then
+            echo "market=IDX" >> $GITHUB_OUTPUT
+          else
+            echo "market=US" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Ambil data
+        run: python scripts/update.py ${{ steps.m.outputs.market }}
+
+      - name: Simpan ke repo
+        run: |
+          git config user.name "nazstock-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet && echo "Tidak ada perubahan" && exit 0
+          git commit -m "Data harian ${{ steps.m.outputs.market }} $(date -u +%Y-%m-%d)"
+          git push

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nazstock — Scanner & Simulasi Saham IDX dan AS</title>
+<meta name="description" content="Scanner lonjakan volume dan simulator trading saham IDX dan AS dengan uang virtual.">
+<link rel="stylesheet" href="style.css">
+<script src="https://unpkg.com/lightweight-charts@4.1.3/dist/lightweight-charts.standalone.production.js"></script>
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <h1>Nazstock</h1>
+    <p>Scanner volume & simulasi trading saham IDX dan AS</p>
+  </div>
+  <div class="wallets">
+    <div class="wallet" id="w-IDR"></div>
+    <div class="wallet" id="w-USD"></div>
+  </div>
+  <div class="status" id="status"></div>
+</header>
+
+<nav class="tabs" id="tabs">
+  <button data-tab="IDX" class="on">Indonesia</button>
+  <button data-tab="US">Amerika</button>
+  <button data-tab="scan">Scanner</button>
+  <button data-tab="port">Portofolio</button>
+  <button data-tab="set">Pengaturan</button>
+</nav>
+
+<main>
+  <!-- PASAR -->
+  <section id="v-market" class="view">
+    <div class="bar">
+      <input id="q" type="search" placeholder="Cari kode atau nama saham…" autocomplete="off">
+      <button id="btn-refresh" class="primary">↻ Refresh harga</button>
+    </div>
+    <div class="hint" id="mkt-info"></div>
+    <h2 id="list-title"></h2>
+    <div class="tablewrap"><table class="list" id="list"></table></div>
+  </section>
+
+  <!-- SCANNER -->
+  <section id="v-scan" class="view hidden">
+    <div class="bar wrap">
+      <div class="seg" id="scan-mkt"><button data-m="IDX" class="on">IDX</button><button data-m="US">AS</button></div>
+      <label>Volume ≥ <select id="scan-k"><option>2</option><option selected>3</option><option>5</option></select>× median 20 hari</label>
+      <label><input type="checkbox" id="scan-cap" checked> Hanya harga &lt; Rp1.500 / &lt; $5</label>
+      <button id="btn-refresh2" class="primary">↻ Refresh harga</button>
+    </div>
+    <div class="chips" id="scan-chips"></div>
+    <details class="rules">
+      <summary>Aturan scanner</summary>
+      <ul>
+        <li>Volume hari ini ≥ 2×/3×/5× median volume 20 hari sebelumnya.</li>
+        <li>Candle hijau: tutup &gt; buka dan tutup &gt; kemarin.</li>
+        <li>Tutup di sepertiga atas range: (tutup−low)/(high−low) ≥ 0,67. Akumulasi kuat ≥ 0,80 dan tembus high 20 hari.</li>
+        <li>Nilai transaksi minimal: IDX lapis utama Rp10 miliar, lapis 2 Rp5 miliar; AS US$20 juta.</li>
+        <li>Kenaikan harian &lt; 10% (IDX) / &lt; 8% (AS).</li>
+        <li>Tren: tutup &gt; MA50 dan MA20 ≥ MA50. Jarak ke MA20 ≤ 15% (IDX) / 10% (AS).</li>
+        <li>Terkonfirmasi: kemarin Akumulasi, hari ini tutup di atas high candle sinyal.</li>
+        <li>Waspada: volume besar tapi candle merah atau tutup lemah (bisa distribusi).</li>
+        <li>Skor 0–100: rasio volume (maks 8×) 40, posisi tutup 20, tembus high 20 hari 20, tren 10, likuiditas 10.</li>
+      </ul>
+      <p class="muted">Backtest 3 tahun (Okt 2023–Okt 2026, beli buka besok, jual 10 hari bursa kemudian): IDX &lt;Rp1.500 sinyal 3× rata-rata +0,86% (median −1,82%, menang 41%); Akumulasi kuat 5× +3,80% (median +0,24%, menang 50%, hanya 92 sinyal). AS &lt;$5 sinyal 3× −2,31% (menang 25%). Sinyal volume bukan jaminan naik.</p>
+    </details>
+    <div class="hint" id="scan-info"></div>
+    <div class="tablewrap"><table class="list" id="scan-table"></table></div>
+  </section>
+
+  <!-- PORTOFOLIO -->
+  <section id="v-port" class="view hidden"></section>
+
+  <!-- PENGATURAN -->
+  <section id="v-set" class="view hidden">
+    <h2>Sumber harga Refresh</h2>
+    <p class="muted">API key hanya disimpan di browser ini (localStorage), tidak dikirim ke repo.</p>
+    <div class="form">
+      <label>GoAPI key (harga IDX, delay ±3–10 menit)<input id="k-goapi" type="password" autocomplete="off" placeholder="dari app.goapi.io"></label>
+      <label>RapidAPI key (OHLC.dev, harga AS)<input id="k-rapid" type="password" autocomplete="off"></label>
+      <label>RapidAPI host<input id="k-rhost" placeholder="contoh: nama-api.p.rapidapi.com"></label>
+      <label>Path endpoint harga AS (pakai {symbol})<input id="k-rpath" placeholder="contoh: /quote?symbol={symbol}"></label>
+      <label><input type="checkbox" id="k-strict"> Wajib harga hasil Refresh ≤ 15 menit untuk transaksi</label>
+      <label><input type="checkbox" id="k-hours" checked> Transaksi hanya saat jam bursa</label>
+      <button id="btn-save" class="primary">Simpan pengaturan</button>
+    </div>
+    <h2>Data simulasi</h2>
+    <div class="bar wrap">
+      <button id="btn-export">Ekspor (unduh .json)</button>
+      <label class="filebtn">Impor<input id="f-import" type="file" accept=".json,application/json"></label>
+      <button id="btn-reset" class="danger">Reset saldo & portofolio</button>
+    </div>
+    <p class="muted">Progres tersimpan otomatis di browser ini. Ekspor untuk cadangan atau pindah perangkat.</p>
+  </section>
+</main>
+
+<!-- DETAIL SAHAM -->
+<div class="sheet hidden" id="sheet">
+  <div class="sheet-in">
+    <div class="sheet-head">
+      <div><h2 id="d-title"></h2><div class="muted" id="d-name"></div></div>
+      <button class="x" id="d-close" aria-label="Tutup">✕</button>
+    </div>
+    <div class="price-row" id="d-price"></div>
+    <div id="chart"></div>
+    <div class="scanbox" id="d-scan"></div>
+    <div class="trade">
+      <div class="seg" id="d-side"><button data-s="buy" class="on">Beli</button><button data-s="sell">Jual</button></div>
+      <label id="d-qlabel">Jumlah<input id="d-qty" type="number" min="1" step="1" value="1" inputmode="numeric"></label>
+      <label>Stop loss (opsional)<input id="d-sl" type="number" step="any" inputmode="decimal"></label>
+      <label>Take profit (opsional)<input id="d-tp" type="number" step="any" inputmode="decimal"></label>
+      <div class="est" id="d-est"></div>
+      <button class="primary big" id="d-go">Beli</button>
+      <div class="msg" id="d-msg"></div>
+    </div>
+    <div id="d-pos"></div>
+  </div>
+</div>
+
+<footer>Simulasi edukasi dengan uang virtual, bukan saran investasi. Data harian dari Yahoo Finance; harga Refresh dari GoAPI/OHLC.dev bisa tertunda.</footer>
+<script src="app.js"></script>
+</body>
+</html>
